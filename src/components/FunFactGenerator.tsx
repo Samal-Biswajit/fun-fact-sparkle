@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import FunFactCard from "./FunFactCard";
 import TopicSelector from "./TopicSelector";
+import { ThemeToggle } from "./ui/theme-toggle";
 import { factTopics, getAllFacts, type FactTopic } from "@/data/categorizedFacts";
 
 const FunFactGenerator = () => {
@@ -45,7 +46,10 @@ const FunFactGenerator = () => {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-6 py-12">
         {/* Header Section */}
-        <header className="text-center mb-12">
+        <header className="text-center mb-12 relative">
+          <div className="absolute top-0 right-0">
+            <ThemeToggle />
+          </div>
           <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-3">
             Fun Fact Generator
           </h1>
